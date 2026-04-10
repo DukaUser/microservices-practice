@@ -41,13 +41,11 @@ def create_user():
     data = request.get_json(silent=True) or {}
     name = data.get('name')
 
-    # ��������
     if not name:
         return jsonify({'error': 'Field "name" is required'}), 400
 
     users = read_users()
 
-    # ��������� ID
     new_id = max((u['id'] for u in users), default=0) + 1
 
     new_user = {
@@ -62,6 +60,5 @@ def create_user():
     return jsonify(new_user), 201
 
 
-# ������ �������
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3001)

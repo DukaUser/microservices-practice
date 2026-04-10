@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  user-service:
+    image: microservices-practice-user-service
+    deploy:
+      replicas: 1
+    ports:
+      - "3001:3001"
+    networks:
+      - micro-net
+
+  order-service:
+    image: microservices-practice-order-service
+    ports:
+      - "3002:3002"
+    networks:
+      - micro-net
+
+  nginx:
+    image: my-nginx
+    ports:
+      - "80:80"
+    networks:
+      - micro-net
+
+networks:
+  micro-net:
+    driver: overlay

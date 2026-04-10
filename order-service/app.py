@@ -10,7 +10,7 @@ app = Flask(__name__)
 DATA_FILE = os.path.join(os.path.dirname(__file__), 'orders.json')
 
 #  Address user-service (WARNING)
-USER_SERVICE_URL = os.getenv('USER_SERVICE_URL', 'http://localhost:3001')
+USER_SERVICE_URL = os.getenv('USER_SERVICE_URL', 'http://user-service:3001')
 
 
 # Reading orders
