@@ -1,4 +1,4 @@
-# Microservices Demo
+# Microservices practice
 
 Учебный проект с двумя микросервисами:
 
